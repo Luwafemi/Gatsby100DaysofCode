@@ -21,6 +21,7 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "http://luwafemi.local/graphql",
+        
       },
     },
     // "@chakra-ui/gatsby-plugin",

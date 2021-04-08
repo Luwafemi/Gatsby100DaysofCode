@@ -87,3 +87,4 @@
   - Install [WP GraphQL] and [ WPGatsby ] plugins on our Wordpress site(through wordpress dashboard/admin site)
   - Install [ gatsby-source-wordpress ] in our Gatsby site and configure it in gatsby-config.js
   - "WPGatsby and gatsby-source-wordpress must be used together"
+- Add your "Gatsby Builds Webhook URL"(gotten from Gatsby cloud or otherwise) to GatsbyJS settings in your Wordpress site (I think this is needed for previews .... so, any changes in your Wordpress site is forwarded to the attached Webhook
