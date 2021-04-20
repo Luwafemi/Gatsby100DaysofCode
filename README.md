@@ -34,6 +34,11 @@
 
   - SOLUTION(check Gatsby docs for migrating from v2 to v1): We have to add some configs to 'gatsby-node.js' file
 
+- ******** Challenge 3: WordPress Blog (#100DaysOfGatsby) ********
+  - In order to set up/configure Gatsby cloud for my wordpress site, I had to make it publicly hosted( as LocalWp's implementation wasn't working....throwing an error 'GraphQL request to http://luwafemi.local/graphql failed.)
+   - SOLUTION:
+    - I searched for free Wordpress hosting sites(https://smartblogger.com/free-wordpress-hosting/). Worked with two (000webhost,Byet.host and awardspace). 000webhost had outdated php, so WPGatsby couldn't be installed, next, I tried out Byet.host, didn't work as well, tried awardspace and voila! problem solved.
+
 ## USING FORMIUM
 
 - Formium is a Form library/plugin. It allows us integrate drag and drop forms into our web apps. It also provides a CMS(backend) for form submissions.
