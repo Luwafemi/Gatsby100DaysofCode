@@ -5,8 +5,8 @@ import Layout from "../components/layout";
 import { Helmet } from "react-helmet";
 
 export const postQuery = graphql`
-  query ($pathh: String!) {
-    wpPost(uri: { eq: $pathh }) {
+  query ($id: String!) {
+    wpPost(id: { eq: $id }) {
         id
         title
         date

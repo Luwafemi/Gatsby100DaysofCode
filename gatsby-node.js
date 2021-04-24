@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
       createPage({
         path: '/blog'+ result.uri,
         component: postTemplate,
-        context:{pathh:result.uri, id:result.id}
+        context:result
       })
     })
   })
@@ -43,3 +43,4 @@ exports.createPages = ({ actions, graphql }) => {
 
 // Note that 'path' would be passed down to the template as variable '$path'. To create other variable names, we would have to make use of 'context' parameter(check the docs 
 // for more info[https://www.gatsbyjs.com/docs/programmatically-create-pages-from-data/])
+// Note that 'result' passed to 'context' is an object; {uri,id}, so, uri and id would be passed down to our template as variables.
