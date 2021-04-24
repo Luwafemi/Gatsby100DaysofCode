@@ -28,11 +28,11 @@ exports.createPages = ({ actions, graphql }) => {
     if (res.errors) {
       return Promise.reject(res.errors)
     }
-    res.data.allWpPost.nodes.forEach(({ uri }) => {
+    res.data.allWpPost.nodes.forEach((result) => {
       createPage({
-        path: '/blog'+ uri,
+        path: '/blog'+ result.uri,
         component: postTemplate,
-        context:{pathh:uri}
+        context:{pathh:result.uri, id:result.id}
       })
     })
   })
