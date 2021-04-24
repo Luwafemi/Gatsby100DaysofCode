@@ -24,7 +24,6 @@ module.exports = {
         
       },
     },
-    // "@chakra-ui/gatsby-plugin",
     {
       resolve: "gatsby-source-formium",
       options: {
@@ -32,6 +31,8 @@ module.exports = {
         accessToken: process.env.FORMIUM_ACCESS_TOKEN,
       },
     },
+    "@chakra-ui/gatsby-plugin",
+
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",

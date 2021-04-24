@@ -8,6 +8,8 @@
 - Lighthouse
 - Gatsby-plugin image
 - gatsby-plugin-manifest and gatsby-plugin-offline
+- gatsby-source-wordpress
+- Yoast SEO, WPGraphQL, WPGatsby (Wordpress plugins)
 
 ### OVERVIEW
 
@@ -25,3 +27,8 @@
 - Lighthouse for measuring the performance of our site (SEO,Accessibility, performance, PWA, best practices e.t.c) We make use of the Lighthouse feature available through google chrome developer tools.
 - 'Gatsby-plugin image' for handling optimization of our images (sizes across different screen sizes, dimensions etc )
 - 'gatsby-plugin-manifest' and 'gatsby-plugin-offline' for PWA capabilities
+- We connect our Gatsby site to a Wordpress site(using it as an headless CMS).
+
+
+## NOTE
+- 'useStaticQuery' is used to make queries within the component itself(not outside)

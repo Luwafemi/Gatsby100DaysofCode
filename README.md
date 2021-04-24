@@ -37,8 +37,8 @@
 - ******** Challenge 3: WordPress Blog (#100DaysOfGatsby) ********
   - In order to set up/configure Gatsby cloud for my wordpress site, I had to make it publicly hosted( as LocalWp's implementation wasn't working....throwing an error 'GraphQL request to http://luwafemi.local/graphql failed.)
    - SOLUTION:
-    - I searched for free Wordpress hosting sites(https://smartblogger.com/free-wordpress-hosting/). Worked with two (000webhost,Byet.host and awardspace). 000webhost had outdated php, so WPGatsby couldn't be installed, next, I tried out Byet.host, didn't work as well, tried awardspace and voila! problem solved.
-
+    - I searched for free Wordpress hosting sites(https://smartblogger.com/free-wordpress-hosting/). Worked with three (000webhost, Byet.host and awardspace). 000webhost had outdated php, so WPGatsby couldn't be installed, next, I tried out Byet.host, the live graphql url in gatsby-config wasn't working(Gatsby build/develop throwing a 'not found' error), tried awardspace and voila! problem solved.
+- outdated packages could also cause errors, try updating.
 ## USING FORMIUM
 
 - Formium is a Form library/plugin. It allows us integrate drag and drop forms into our web apps. It also provides a CMS(backend) for form submissions.
@@ -90,6 +90,14 @@
 
 - To integrate Wordpress into our Gatsby site, we do the following;
   - Install [WP GraphQL] and [ WPGatsby ] plugins on our Wordpress site(through wordpress dashboard/admin site)
-  - Install [ gatsby-source-wordpress ] in our Gatsby site and configure it in gatsby-config.js
+  - Install [ gatsby-source-wordpress ] in our Gatsby site and configure it in gatsby-config.js (we add the graphql URL for the Wordpress site: I believe this is how our Gatsby site communicates with/fetches data from the WP site...by sending queries to that URL)
   - "WPGatsby and gatsby-source-wordpress must be used together"
-- Add your "Gatsby Builds Webhook URL"(gotten from Gatsby cloud or otherwise) to GatsbyJS settings in your Wordpress site (I think this is needed for previews .... so, any changes in your Wordpress site is forwarded to the attached Webhook
+  
+- ***'YOAST SEO' and 'WPGraphQL Yoast SEO addon' plugins ***
+ - Yoast SEO is a popular WP plugin for SEO. To make use of it for our Gatsby site, we'll need an additional plugin to go with it; 'WPGraphQL Yoast SEO addon' (This plugin enables Yoast SEO support for WPGraphQL). 
+ - How they work????
+   - Yoast SEO enables search engine optimization(meta tags, etc) for WP sites. In order to make the meta-tags, content, etc available in our Gatsby site, we make us of 'WPGraphQL Yoast SEO addon', this plugin infuses Yoast SEO data into our WP site's graphql schema which automatically becomes available in our Gatsby site's graphql schema.
+
+- ***INCREMENTAL BUILDS AND PREVIEWS (using Gatsby Cloud)***
+  - For incremental builds on Gatsby cloud, We add Gatsby Builds Webhook URL (gotten from Gatsby cloud or otherwise) to GatsbyJS settings in our Wordpress site. Any changes in our Wordpress site is forwarded to the attached Webhook, Gatsby cloud receives the changes and rebuilds our site automatically___incrementally(very fast).
+  - For previews, we need two values/fields from Gatsby cloud (Preview Instance and Preview Webhook), which we add to GatsbyJS settings in our Wordpress site. On doing this, we can now preview our Gatsby site right from our WP site

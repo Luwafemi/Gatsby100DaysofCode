@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 
 export const postQuery = graphql`
-  query MyQuery($id: String!) {
+  query ($id: String!) {
     contentfulCities(id: { eq: $id }) {
       id
       name
