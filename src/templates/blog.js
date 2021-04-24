@@ -2,6 +2,7 @@ import React from "react";
 import { graphql,Link } from "gatsby";
 import { Container,Box, Heading, Text } from "@chakra-ui/react";
 import Layout from "../components/layout";
+import { Helmet } from "react-helmet";
 
 export const postQuery = graphql`
   query ($pathh: String!) {
@@ -11,6 +12,9 @@ export const postQuery = graphql`
         date
         excerpt
         uri
+        seo {
+        metaDesc
+      }
     }
   }
 `;
@@ -19,6 +23,9 @@ const Template = ({ data }) => {
   return (
     <div>
       <Layout>
+      <Helmet> 
+       <meta name="description" content={post.seo.metaDesc} />
+      </Helmet>
       <Container maxW='xl' centerContent>
                 <Box p={5} mt={10} shadow="md" borderWidth='1px'>
                   <Heading as={'h2'}>{post.title}</Heading>

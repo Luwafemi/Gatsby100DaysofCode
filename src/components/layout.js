@@ -2,9 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./layout.css";
 import Header from "../components/header";
+import Seo from "./seo"
 
 const layout = ({ children }) => (
   <>
+    <Seo/>
     <Header />
     {children}
   </>
